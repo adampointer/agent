@@ -1,12 +1,13 @@
 package main
 
 import (
-	"agent/internal/app/agent"
 	"context"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/adampointer/agent/internal/app/agent"
 )
 
 func main() {
