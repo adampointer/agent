@@ -1,3 +1,4 @@
+//go:generate mockgen -package=mocks -source=sink.go -destination=../mocks/sink.go
 package sinks
 
 import (

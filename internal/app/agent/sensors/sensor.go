@@ -1,3 +1,4 @@
+//go:generate mockgen -package=mocks -source=sensor.go -destination=../mocks/sensor.go
 package sensors
 
 import (
