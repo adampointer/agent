@@ -4,13 +4,15 @@ import (
 	"context"
 	"time"
 
+	"github.com/adampointer/agent/internal/app/agent/settings"
+
+	"github.com/pkg/errors"
+
 	"github.com/adampointer/agent/internal/app/agent/sensors"
 	"github.com/adampointer/eventbus"
 )
 
 const metricsTopic eventbus.Topic = "metrics"
-
-var allSensors []sensors.Sensor
 
 func startSensors(ctx context.Context, errC chan error, interval time.Duration, bus *eventbus.EventBus) {
 	ticker := time.NewTicker(interval)
@@ -24,20 +26,28 @@ func startSensors(ctx context.Context, errC chan error, interval time.Duration, 
 			}
 			break
 		case <-ticker.C:
-			scan(ctx, errC, bus)
+			allScans(ctx, errC, bus)
 		}
 	}
 }
 
-func scan(ctx context.Context, errC chan error, bus *eventbus.EventBus) {
-	for _, sensor := range allSensors {
+func allScans(ctx context.Context, errC chan error, bus *eventbus.EventBus) {
+	for _, sensor := range settings.Sensors {
 		sensor := sensor
 		go func() {
-			snapshot, err := sensor.DoScan(ctx)
-			if err != nil {
+			if err := scanAndPublish(ctx, sensor, bus); err != nil {
 				errC <- err
 			}
-			bus.Publish(metricsTopic, snapshot)
 		}()
 	}
+}
+
+func scanAndPublish(ctx context.Context, sensor sensors.Sensor, bus *eventbus.EventBus) error {
+	snapshot, err := sensor.DoScan(ctx)
+	if err != nil {
+		return errors.Wrap(err, "sensor scan")
+	}
+
+	bus.Publish(metricsTopic, snapshot)
+	return nil
 }

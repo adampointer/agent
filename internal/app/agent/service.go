@@ -3,13 +3,18 @@ package agent
 import (
 	"context"
 	"log"
-	"time"
 
+	"github.com/adampointer/agent/internal/app/agent/settings"
 	"github.com/adampointer/eventbus"
 )
 
 func Setup() error {
 	log.Print("setting up")
+
+	settings.SetupEnvironment()
+	settings.SetupSensors()
+	settings.SetupSinks()
+
 	return nil
 }
 
@@ -17,9 +22,12 @@ func Start(ctx context.Context, errC chan error) error {
 	log.Print("starting")
 
 	bus := eventbus.NewEventBus()
-
-	go startSinks(ctx, errC, bus)
-	go startSensors(ctx, errC, time.Second, bus)
+	start(ctx, errC, bus)
 
 	return nil
+}
+
+func start(ctx context.Context, errC chan error, bus *eventbus.EventBus) {
+	go startSinks(ctx, errC, bus)
+	go startSensors(ctx, errC, settings.ScanInterval, bus)
 }
