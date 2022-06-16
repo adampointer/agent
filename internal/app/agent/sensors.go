@@ -24,7 +24,7 @@ func startSensors(ctx context.Context, errC chan error, interval time.Duration, 
 			if ctx.Err() != context.Canceled {
 				errC <- ctx.Err()
 			}
-			break
+			return
 		case <-ticker.C:
 			allScans(ctx, errC, bus)
 		}
