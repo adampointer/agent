@@ -1,0 +1,382 @@
+# HELP algod_telemetry_drops_total telemetry messages not sent to server
+# TYPE algod_telemetry_drops_total counter
+algod_telemetry_drops_total 0
+# HELP algod_crypto_vrf_generate_total Total number of calls to GenerateVRFSecrets
+# TYPE algod_crypto_vrf_generate_total counter
+algod_crypto_vrf_generate_total 0
+# HELP algod_crypto_vrf_prove_total Total number of calls to VRFSecrets.Prove
+# TYPE algod_crypto_vrf_prove_total counter
+algod_crypto_vrf_prove_total 0
+# HELP algod_crypto_vrf_hash_total Total number of calls to VRFProof.Hash
+# TYPE algod_crypto_vrf_hash_total counter
+algod_crypto_vrf_hash_total 0
+# HELP algod_crypto_vrf_verify_total Total number of calls to VRFVerifier.Verify
+# TYPE algod_crypto_vrf_verify_total counter
+algod_crypto_vrf_verify_total 0
+# HELP algod_crypto_signature_secrets_generate_total Total number of calls to GenerateSignatureSecrets
+# TYPE algod_crypto_signature_secrets_generate_total counter
+algod_crypto_signature_secrets_generate_total 0
+# HELP algod_crypto_signature_secrets_sign_total Total number of calls to SignatureSecrets.Sign
+# TYPE algod_crypto_signature_secrets_sign_total counter
+algod_crypto_signature_secrets_sign_total 0
+# HELP algod_crypto_signature_secrets_bytes_sign_total Total number of calls to SignatureSecrets.signBytes
+# TYPE algod_crypto_signature_secrets_bytes_sign_total counter
+algod_crypto_signature_secrets_bytes_sign_total 0
+# HELP algod_crypto_signature_secrets_verify_total Total number of calls to SignatureVerifier.Verify
+# TYPE algod_crypto_signature_secrets_verify_total counter
+algod_crypto_signature_secrets_verify_total 0
+# HELP algod_crypto_vrf_bytes_verify_total Total number of calls to SignatureVerifier.VerifyBytes
+# TYPE algod_crypto_vrf_bytes_verify_total counter
+algod_crypto_vrf_bytes_verify_total 0
+# HELP algod_agreement_vote_verifier_responses_dropped Number of voteVerifier responses dropped due to full channel
+# TYPE algod_agreement_vote_verifier_responses_dropped counter
+algod_agreement_vote_verifier_responses_dropped 0
+# HELP algod_agreement_pseudonode_tasks_dropped_proposal Number of pseudonode proposal tasks dropped
+# TYPE algod_agreement_pseudonode_tasks_dropped_proposal counter
+algod_agreement_pseudonode_tasks_dropped_proposal 0
+# HELP algod_agreement_pseudonode_tasks_dropped_vote Number of pseudonode vote tasks dropped
+# TYPE algod_agreement_pseudonode_tasks_dropped_vote counter
+algod_agreement_pseudonode_tasks_dropped_vote 0
+# HELP algod_agreement_pseudonode_tasks_timeouts_vote Number of pseudonode vote task result timeouts
+# TYPE algod_agreement_pseudonode_tasks_timeouts_vote counter
+algod_agreement_pseudonode_tasks_timeouts_vote 0
+# HELP algod_agreement_pseudonode_tasks_timeouts_pvote Number of pseudonode pvote task result timeouts
+# TYPE algod_agreement_pseudonode_tasks_timeouts_pvote counter
+algod_agreement_pseudonode_tasks_timeouts_pvote 0
+# HELP algod_agreement_pseudonode_tasks_timeouts_ppayload Number of pseudonode ppayload task result timeouts
+# TYPE algod_agreement_pseudonode_tasks_timeouts_ppayload counter
+algod_agreement_pseudonode_tasks_timeouts_ppayload 0
+# HELP algod_ledger_logic_ok Total transaction scripts executed and accepted
+# TYPE algod_ledger_logic_ok counter
+algod_ledger_logic_ok 0
+# HELP algod_ledger_logic_rej Total transaction scripts executed and rejected
+# TYPE algod_ledger_logic_rej counter
+algod_ledger_logic_rej 0
+# HELP algod_ledger_logic_err Total transaction scripts executed and errored
+# TYPE algod_ledger_logic_err counter
+algod_ledger_logic_err 0
+# HELP ledger_accountsonlinetop_count calls
+# TYPE ledger_accountsonlinetop_count counter
+ledger_accountsonlinetop_count 0
+# HELP ledger_accountsonlinetop_micros µs spent
+# TYPE ledger_accountsonlinetop_micros counter
+ledger_accountsonlinetop_micros 0
+# HELP ledger_getcatchpoint_count calls
+# TYPE ledger_getcatchpoint_count counter
+ledger_getcatchpoint_count 0
+# HELP ledger_getcatchpoint_micros µs spent
+# TYPE ledger_getcatchpoint_micros counter
+ledger_getcatchpoint_micros 0
+# HELP ledger_accountsinit_count calls
+# TYPE ledger_accountsinit_count counter
+ledger_accountsinit_count{} 1
+# HELP ledger_accountsinit_micros µs spent
+# TYPE ledger_accountsinit_micros counter
+ledger_accountsinit_micros{} 31
+# HELP ledger_commitround_count calls
+# TYPE ledger_commitround_count counter
+ledger_commitround_count{} 233115
+# HELP ledger_commitround_micros µs spent
+# TYPE ledger_commitround_micros counter
+ledger_commitround_micros{} 11121274000
+# HELP ledger_generatecatchpoint_count calls
+# TYPE ledger_generatecatchpoint_count counter
+ledger_generatecatchpoint_count 0
+# HELP ledger_generatecatchpoint_micros µs spent
+# TYPE ledger_generatecatchpoint_micros counter
+ledger_generatecatchpoint_micros 0
+# HELP ledger_vacuum_count calls
+# TYPE ledger_vacuum_count counter
+ledger_vacuum_count 0
+# HELP ledger_vacuum_micros µs spent
+# TYPE ledger_vacuum_micros counter
+ledger_vacuum_micros 0
+# HELP ledger_blockq_init_count calls to init block queue
+# TYPE ledger_blockq_init_count counter
+ledger_blockq_init_count{} 1
+# HELP ledger_blockq_init_micros µs spent to init block queue
+# TYPE ledger_blockq_init_micros counter
+ledger_blockq_init_micros{} 151
+# HELP ledger_blockq_sync_put_count calls to sync block queue
+# TYPE ledger_blockq_sync_put_count counter
+ledger_blockq_sync_put_count{} 444704
+# HELP ledger_blockq_sync_put_micros µs spent to sync block queue
+# TYPE ledger_blockq_sync_put_micros counter
+ledger_blockq_sync_put_micros{} 13525455000
+# HELP ledger_blockq_sync_forget_count calls
+# TYPE ledger_blockq_sync_forget_count counter
+ledger_blockq_sync_forget_count{} 444703
+# HELP ledger_blockq_sync_forget_micros µs spent
+# TYPE ledger_blockq_sync_forget_micros counter
+ledger_blockq_sync_forget_micros{} 10648403000
+# HELP ledger_blockq_getblock_count calls
+# TYPE ledger_blockq_getblock_count counter
+ledger_blockq_getblock_count{} 17
+# HELP ledger_blockq_getblock_micros µs spent
+# TYPE ledger_blockq_getblock_micros counter
+ledger_blockq_getblock_micros{} 313
+# HELP ledger_blockq_getblockhdr_count calls
+# TYPE ledger_blockq_getblockhdr_count counter
+ledger_blockq_getblockhdr_count{} 4655127
+# HELP ledger_blockq_getblockhdr_micros µs spent
+# TYPE ledger_blockq_getblockhdr_micros counter
+ledger_blockq_getblockhdr_micros{} 170743550
+# HELP ledger_blockq_geteblockcert_count calls
+# TYPE ledger_blockq_geteblockcert_count counter
+ledger_blockq_geteblockcert_count 0
+# HELP ledger_blockq_geteblockcert_micros µs spent
+# TYPE ledger_blockq_geteblockcert_micros counter
+ledger_blockq_geteblockcert_micros 0
+# HELP ledger_blockq_getblockcert_count calls
+# TYPE ledger_blockq_getblockcert_count counter
+ledger_blockq_getblockcert_count 0
+# HELP ledger_blockq_getblockcert_micros µs spent
+# TYPE ledger_blockq_getblockcert_micros counter
+ledger_blockq_getblockcert_micros 0
+# HELP ledger_catchup_resetstagingbalances_count calls
+# TYPE ledger_catchup_resetstagingbalances_count counter
+ledger_catchup_resetstagingbalances_count 0
+# HELP ledger_catchup_resetstagingbalances_micros µs spent
+# TYPE ledger_catchup_resetstagingbalances_micros counter
+ledger_catchup_resetstagingbalances_micros 0
+# HELP ledger_catchup_processstagingcontent_count calls
+# TYPE ledger_catchup_processstagingcontent_count counter
+ledger_catchup_processstagingcontent_count 0
+# HELP ledger_catchup_processstagingcontent_micros µs spent
+# TYPE ledger_catchup_processstagingcontent_micros counter
+ledger_catchup_processstagingcontent_micros 0
+# HELP ledger_catchup_processstagingbalances_count calls
+# TYPE ledger_catchup_processstagingbalances_count counter
+ledger_catchup_processstagingbalances_count 0
+# HELP ledger_catchup_processstagingbalances_micros µs spent
+# TYPE ledger_catchup_processstagingbalances_micros counter
+ledger_catchup_processstagingbalances_micros 0
+# HELP ledger_catchup_verifycatchpoint_count calls
+# TYPE ledger_catchup_verifycatchpoint_count counter
+ledger_catchup_verifycatchpoint_count 0
+# HELP ledger_catchup_verifycatchpoint_micros µs spent
+# TYPE ledger_catchup_verifycatchpoint_micros counter
+ledger_catchup_verifycatchpoint_micros 0
+# HELP ledger_catchup_storebalancesround_count calls
+# TYPE ledger_catchup_storebalancesround_count counter
+ledger_catchup_storebalancesround_count 0
+# HELP ledger_catchup_storebalancesround_micros µs spent
+# TYPE ledger_catchup_storebalancesround_micros counter
+ledger_catchup_storebalancesround_micros 0
+# HELP ledger_catchup_storefirstblock_count calls
+# TYPE ledger_catchup_storefirstblock_count counter
+ledger_catchup_storefirstblock_count 0
+# HELP ledger_catchup_storefirstblock_micros µs spent
+# TYPE ledger_catchup_storefirstblock_micros counter
+ledger_catchup_storefirstblock_micros 0
+# HELP ledger_catchup_catchpoint_storeblock_count calls
+# TYPE ledger_catchup_catchpoint_storeblock_count counter
+ledger_catchup_catchpoint_storeblock_count 0
+# HELP ledger_catchup_catchpoint_storeblock_micros µs spent
+# TYPE ledger_catchup_catchpoint_storeblock_micros counter
+ledger_catchup_catchpoint_storeblock_micros 0
+# HELP ledger_catchup_catchpoint_finishblocks_count calls
+# TYPE ledger_catchup_catchpoint_finishblocks_count counter
+ledger_catchup_catchpoint_finishblocks_count 0
+# HELP ledger_catchup_catchpoint_finishblocks_micros µs spent
+# TYPE ledger_catchup_catchpoint_finishblocks_micros counter
+ledger_catchup_catchpoint_finishblocks_micros 0
+# HELP ledger_catchup_catchpoint_ensureblock1_count calls
+# TYPE ledger_catchup_catchpoint_ensureblock1_count counter
+ledger_catchup_catchpoint_ensureblock1_count 0
+# HELP ledger_catchup_catchpoint_ensureblock1_micros µs spent
+# TYPE ledger_catchup_catchpoint_ensureblock1_micros counter
+ledger_catchup_catchpoint_ensureblock1_micros 0
+# HELP ledger_catchup_catchpoint_finish_bals_count calls
+# TYPE ledger_catchup_catchpoint_finish_bals_count counter
+ledger_catchup_catchpoint_finish_bals_count 0
+# HELP ledger_catchup_catchpoint_finish_bals_micros µs spent
+# TYPE ledger_catchup_catchpoint_finish_bals_micros counter
+ledger_catchup_catchpoint_finish_bals_micros 0
+# HELP ledger_initblocksdb_count calls
+# TYPE ledger_initblocksdb_count counter
+ledger_initblocksdb_count{} 1
+# HELP ledger_initblocksdb_micros µs spent
+# TYPE ledger_initblocksdb_micros counter
+ledger_initblocksdb_micros{} 35878
+# HELP ledger_verifygenhash_count calls
+# TYPE ledger_verifygenhash_count counter
+ledger_verifygenhash_count{} 1
+# HELP ledger_verifygenhash_micros µs spent
+# TYPE ledger_verifygenhash_micros counter
+ledger_verifygenhash_micros{} 29
+# HELP algod_network_incoming_connections Number of incoming connections
+# TYPE algod_network_incoming_connections gauge
+algod_network_incoming_connections{} 0
+# HELP algod_network_outgoing_connections Number of outgoing connections
+# TYPE algod_network_outgoing_connections gauge
+algod_network_outgoing_connections{} 4
+# HELP algod_network_rx_buffer_micros_total microseconds spent by incoming messages on the receive buffer
+# TYPE algod_network_rx_buffer_micros_total counter
+algod_network_rx_buffer_micros_total{} 108887410
+# HELP algod_network_rx_handle_micros_total microseconds spent by protocol handlers in the receive thread
+# TYPE algod_network_rx_handle_micros_total counter
+algod_network_rx_handle_micros_total{} 2008306
+# HELP algod_network_broadcasts_total number of broadcast operations
+# TYPE algod_network_broadcasts_total counter
+algod_network_broadcasts_total{} 11672
+# HELP algod_network_broadcast_queue_micros_total microseconds broadcast requests sit on queue
+# TYPE algod_network_broadcast_queue_micros_total counter
+algod_network_broadcast_queue_micros_total{} 553166
+# HELP algod_network_broadcast_send_micros_total microseconds spent broadcasting
+# TYPE algod_network_broadcast_send_micros_total counter
+algod_network_broadcast_send_micros_total{} 55958
+# HELP algod_broadcasts_dropped_total number of broadcast messages not sent to any peer
+# TYPE algod_broadcasts_dropped_total counter
+algod_broadcasts_dropped_total 0
+# HELP algod_peer_broadcast_dropped_total number of broadcast messages not sent to some peer
+# TYPE algod_peer_broadcast_dropped_total counter
+algod_peer_broadcast_dropped_total 0
+# HELP algod_network_slow_drops_total number of peers dropped for being slow to send to
+# TYPE algod_network_slow_drops_total counter
+algod_network_slow_drops_total 0
+# HELP algod_network_idle_drops_total number of peers dropped due to idle connection
+# TYPE algod_network_idle_drops_total counter
+algod_network_idle_drops_total{} 4
+# HELP algod_network_broadcast_queue_full_total number of messages that were drops due to full broadcast queue
+# TYPE algod_network_broadcast_queue_full_total counter
+algod_network_broadcast_queue_full_total 0
+# HELP algod_network_peers Number of active peers.
+# TYPE algod_network_peers gauge
+algod_network_peers{} 4
+# HELP algod_network_incoming_peers Number of active incoming peers.
+# TYPE algod_network_incoming_peers gauge
+algod_network_incoming_peers{} 0
+# HELP algod_network_outgoing_peers Number of active outgoing peers.
+# TYPE algod_network_outgoing_peers gauge
+algod_network_outgoing_peers{} 4
+# HELP algod_network_sent_bytes_total Total number of bytes that were sent over the network
+# TYPE algod_network_sent_bytes_total counter
+algod_network_sent_bytes_total{} 330222000
+# HELP algod_network_sent_bytes_UE Number of bytes that were sent over the network for UE messages
+# TYPE algod_network_sent_bytes_UE counter
+algod_network_sent_bytes_UE 329133174
+# HELP algod_network_sent_bytes_MS Number of bytes that were sent over the network for MS messages
+# TYPE algod_network_sent_bytes_MS counter
+algod_network_sent_bytes_MS 1076984
+# HELP algod_network_sent_bytes_MI Number of bytes that were sent over the network for MI messages
+# TYPE algod_network_sent_bytes_MI counter
+algod_network_sent_bytes_MI 11849
+# HELP algod_network_received_bytes_total Total number of bytes that were received from the network
+# TYPE algod_network_received_bytes_total counter
+algod_network_received_bytes_total{} 71827276000
+# HELP algod_network_received_bytes_AV Number of bytes that were received from the network for AV messages
+# TYPE algod_network_received_bytes_AV counter
+algod_network_received_bytes_AV 1096120248
+# HELP algod_network_received_bytes_PP Number of bytes that were received from the network for PP messages
+# TYPE algod_network_received_bytes_PP counter
+algod_network_received_bytes_PP 392947395
+# HELP algod_network_received_bytes_MI Number of bytes that were received from the network for MI messages
+# TYPE algod_network_received_bytes_MI counter
+algod_network_received_bytes_MI 13677
+# HELP algod_network_received_bytes_TS Number of bytes that were received from the network for TS messages
+# TYPE algod_network_received_bytes_TS counter
+algod_network_received_bytes_TS 70327821444
+# HELP algod_network_received_bytes_MS Number of bytes that were received from the network for MS messages
+# TYPE algod_network_received_bytes_MS counter
+algod_network_received_bytes_MS 9162932
+# HELP algod_network_received_bytes_TX Number of bytes that were received from the network for TX messages
+# TYPE algod_network_received_bytes_TX counter
+algod_network_received_bytes_TX 1212894
+# HELP algod_network_message_received_total Total number of complete messages that were received from the network
+# TYPE algod_network_message_received_total counter
+algod_network_message_received_total{} 6885577
+# HELP algod_network_message_received_AV Number of complete messages that were received from the network for AV messages
+# TYPE algod_network_message_received_AV counter
+algod_network_message_received_AV 1740920
+# HELP algod_network_message_received_PP Number of complete messages that were received from the network for PP messages
+# TYPE algod_network_message_received_PP counter
+algod_network_message_received_PP 102819
+# HELP algod_network_message_received_TS Number of complete messages that were received from the network for TS messages
+# TYPE algod_network_message_received_TS counter
+algod_network_message_received_TS 4768977
+# HELP algod_network_message_received_TX Number of complete messages that were received from the network for TX messages
+# TYPE algod_network_message_received_TX counter
+algod_network_message_received_TX 3072
+# HELP algod_network_message_received_MS Number of complete messages that were received from the network for MS messages
+# TYPE algod_network_message_received_MS counter
+algod_network_message_received_MS 269498
+# HELP algod_network_message_received_MI Number of complete messages that were received from the network for MI messages
+# TYPE algod_network_message_received_MI counter
+algod_network_message_received_MI 291
+# HELP algod_network_message_sent_total Total number of complete messages that were sent to the network
+# TYPE algod_network_message_sent_total counter
+algod_network_message_sent_total{} 4802011
+# HELP algod_network_message_sent_UE Number of complete messages that were sent to the network for UE messages
+# TYPE algod_network_message_sent_UE counter
+algod_network_message_sent_UE 4770046
+# HELP algod_network_message_sent_MS Number of complete messages that were sent to the network for MS messages
+# TYPE algod_network_message_sent_MS counter
+algod_network_message_sent_MS 31676
+# HELP algod_network_message_sent_MI Number of complete messages that were sent to the network for MI messages
+# TYPE algod_network_message_sent_MI counter
+algod_network_message_sent_MI 289
+# HELP algod_network_connections_dropped_total Total number of connections that were dropped before a message
+# TYPE algod_network_connections_dropped_total counter
+algod_network_connections_dropped_total{reason="reader err"} 123
+algod_network_connections_dropped_total{reason="write err"} 6
+# HELP algod_network_message_sent_queue_micros_total Total microseconds message spent waiting in queue to be sent
+# TYPE algod_network_message_sent_queue_micros_total counter
+algod_network_message_sent_queue_micros_total{} 245175660
+# HELP algod_network_duplicate_message_received_total Total number of duplicate messages that were received from the network
+# TYPE algod_network_duplicate_message_received_total counter
+algod_network_duplicate_message_received_total 0
+# HELP algod_network_duplicate_message_received_bytes_total The total number ,in bytes, of the duplicate messages that were received from the network
+# TYPE algod_network_duplicate_message_received_bytes_total counter
+algod_network_duplicate_message_received_bytes_total 0
+# HELP algod_outgoing_network_message_filtered_out_total Total number of messages that were not sent per peer request
+# TYPE algod_outgoing_network_message_filtered_out_total counter
+algod_outgoing_network_message_filtered_out_total 0
+# HELP algod_outgoing_network_message_filtered_out_bytes_total Total number of bytes saved by not sending messages that were asked not to be sent by peer
+# TYPE algod_outgoing_network_message_filtered_out_bytes_total counter
+algod_outgoing_network_message_filtered_out_bytes_total 0
+# HELP algod_transaction_messages_handled Number of transaction messages handled
+# TYPE algod_transaction_messages_handled counter
+algod_transaction_messages_handled 0
+# HELP algod_transaction_messages_dropped_backlog Number of transaction messages dropped from backlog
+# TYPE algod_transaction_messages_dropped_backlog counter
+algod_transaction_messages_dropped_backlog 0
+# HELP algod_transaction_messages_dropped_pool Number of transaction messages dropped from pool
+# TYPE algod_transaction_messages_dropped_pool counter
+algod_transaction_messages_dropped_pool 0
+# HELP algod_agreement_handled Number of agreement messages handled
+# TYPE algod_agreement_handled counter
+algod_agreement_handled{} 1840934
+# HELP algod_agreement_handled_vote Number of agreement vote messages handled
+# TYPE algod_agreement_handled_vote counter
+algod_agreement_handled_vote 1739018
+# HELP algod_agreement_handled_proposal Number of agreement proposal messages handled
+# TYPE algod_agreement_handled_proposal counter
+algod_agreement_handled_proposal 101916
+# HELP algod_agreement_handled_bundle Number of agreement bundle messages handled
+# TYPE algod_agreement_handled_bundle counter
+algod_agreement_handled_bundle 0
+# HELP algod_agreement_dropped Number of agreement messages dropped
+# TYPE algod_agreement_dropped counter
+algod_agreement_dropped{} 2804
+# HELP algod_agreement_dropped_bundle Number of agreement bundle messages dropped
+# TYPE algod_agreement_dropped_bundle counter
+algod_agreement_dropped_bundle 0
+# HELP algod_agreement_dropped_vote Number of agreement vote messages dropped
+# TYPE algod_agreement_dropped_vote counter
+algod_agreement_dropped_vote 1901
+# HELP algod_agreement_dropped_proposal Number of agreement proposal messages dropped
+# TYPE algod_agreement_dropped_proposal counter
+algod_agreement_dropped_proposal 903
+# HELP algod_tx_pool_count current number of available transactions in pool
+# TYPE algod_tx_pool_count gauge
+algod_tx_pool_count{} 0
+# HELP algod_ledger_transactions_total Total number of transactions written to the ledger
+# TYPE algod_ledger_transactions_total counter
+algod_ledger_transactions_total{} 83856200
+# HELP algod_ledger_reward_claims_total Total number of reward claims written to the ledger
+# TYPE algod_ledger_reward_claims_total counter
+algod_ledger_reward_claims_total{} 4825054
+# HELP algod_ledger_round Last round written to ledger
+# TYPE algod_ledger_round gauge
+algod_ledger_round{} 4825054

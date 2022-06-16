@@ -57,6 +57,8 @@ func writeSnapshotToFile(f *os.File, snapshot *sensors.SnapshotEvent) error {
 		return errors.Wrap(err, "serialise snapshot")
 	}
 
+	bs = append(bs, []byte("\n")...)
 	_, err = f.Write(bs)
+
 	return errors.Wrap(err, "file write")
 }
