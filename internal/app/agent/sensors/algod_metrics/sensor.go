@@ -29,7 +29,7 @@ func (s *Sensor) DoScan(_ context.Context) (*sensors.SnapshotEvent, error) {
 		return nil, errors.Wrap(err, "get request")
 	}
 	if res.StatusCode > 299 {
-		return nil, errors.Errorf("bad status code: %d (%s)", res.StatusCode, res.Status)
+		return nil, errors.Errorf("bad status code from metrics endpoint: %d (%s)", res.StatusCode, res.Status)
 	}
 	defer res.Body.Close()
 
