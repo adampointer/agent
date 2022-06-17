@@ -20,12 +20,18 @@ func GetTestDataReadClose(t testing.TB, filename string) io.ReadCloser {
 	return io.NopCloser(buf)
 }
 
-func GetTestData(t testing.TB, filename string) []byte {
+func TestDataPath(t testing.TB) string {
 	t.Helper()
 
 	wd, err := os.Getwd()
 	require.NoError(t, err)
-	data, err := os.ReadFile(filepath.Join(wd, "..", "..", "..", "..", "..", "testdata", filename))
+	return filepath.Join(wd, "..", "..", "..", "..", "..", "testdata")
+}
+
+func GetTestData(t testing.TB, filename string) []byte {
+	t.Helper()
+
+	data, err := os.ReadFile(filepath.Join(TestDataPath(t), filename))
 	require.NoError(t, err)
 	return data
 }

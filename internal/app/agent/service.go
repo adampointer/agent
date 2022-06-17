@@ -4,6 +4,8 @@ import (
 	"context"
 	"log"
 
+	"github.com/pkg/errors"
+
 	"github.com/adampointer/agent/internal/app/agent/settings"
 	"github.com/adampointer/eventbus"
 )
@@ -12,7 +14,9 @@ func Setup() error {
 	log.Print("setting up")
 
 	settings.SetupEnvironment()
-	settings.SetupSensors()
+	if err := settings.SetupSensors(); err != nil {
+		return errors.Wrap(err, "setup sensors")
+	}
 	settings.SetupSinks()
 
 	return nil
