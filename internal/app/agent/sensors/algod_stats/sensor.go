@@ -16,11 +16,14 @@ const (
 	apiKeyHeader = "X-Algo-API-Token"
 )
 
+// Sensor implements sensors.Sensor and samples from the `/v2/status` endpoint of the algod service
 type Sensor struct {
 	addr     string
 	apiToken string
 }
 
+// NewSensorFromAddressAndToken creates a new Sensor from the URL of the algod service and also a valid
+// API token with permission for the status endpoint
 func NewSensorFromAddressAndToken(addr, token string) *Sensor {
 	return &Sensor{
 		addr:     addr,
@@ -28,6 +31,7 @@ func NewSensorFromAddressAndToken(addr, token string) *Sensor {
 	}
 }
 
+// DoScan performs the scan and returns a sensors.SnapshotEvent or an error
 func (s *Sensor) DoScan(_ context.Context) (*sensors.SnapshotEvent, error) {
 	req, err := http.NewRequest(http.MethodGet, s.addr+path, nil)
 	if err != nil {

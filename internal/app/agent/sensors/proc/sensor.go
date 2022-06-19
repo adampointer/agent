@@ -13,9 +13,11 @@ const (
 	label    = "procfs"
 )
 
+// PidFinder is a function which takes in a process name and returns its PID
 type PidFinder func(processName string) (int, error)
 
-func defaultPidFinder(fs procfs.FS) PidFinder {
+// DefaultPidFinder returns a PidFinder which uses an initialised procfs.FS to find the PID of the given process
+func DefaultPidFinder(fs procfs.FS) PidFinder {
 	return func(processName string) (int, error) {
 		procs, err := fs.AllProcs()
 		if err != nil {
@@ -34,12 +36,16 @@ func defaultPidFinder(fs procfs.FS) PidFinder {
 	}
 }
 
+// Sensor implements sensors.Sensor and samples from the selected stats from the proc filesystem
 type Sensor struct {
 	procFSPath string
 	fs         procfs.FS
 	pidFinder  PidFinder
 }
 
+// NewSensorFromPath creates a new Sensor from a path to the proc filesystem. Usually this is /proc but can be
+// overriden to a fixtured copy for testing
+// Bu default, DefaultPidFinder is used to determine the PID of the algod service
 func NewSensorFromPath(path string) (*Sensor, error) {
 	fs, err := procfs.NewFS(path)
 	if err != nil {
@@ -48,16 +54,18 @@ func NewSensorFromPath(path string) (*Sensor, error) {
 	sensor := &Sensor{
 		procFSPath: path,
 		fs:         fs,
-		pidFinder:  defaultPidFinder(fs),
+		pidFinder:  DefaultPidFinder(fs),
 	}
 	return sensor, nil
 }
 
+// WithPidFinder replaces DefaultPidFinder
 func (s *Sensor) WithPidFinder(f PidFinder) *Sensor {
 	s.pidFinder = f
 	return s
 }
 
+// DoScan performs the scan and returns a sensors.SnapshotEvent or an error
 func (s *Sensor) DoScan(_ context.Context) (*sensors.SnapshotEvent, error) {
 	payload := make(map[string]interface{})
 

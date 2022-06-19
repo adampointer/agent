@@ -10,6 +10,7 @@ import (
 	"github.com/adampointer/eventbus"
 )
 
+// Setup the application
 func Setup() error {
 	log.Print("setting up")
 
@@ -22,6 +23,7 @@ func Setup() error {
 	return nil
 }
 
+// Start the application. This is non-blocking. Stop by canceling the context.
 func Start(ctx context.Context, errC chan error) error {
 	log.Print("starting")
 

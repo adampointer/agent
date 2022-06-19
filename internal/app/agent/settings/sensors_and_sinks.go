@@ -14,6 +14,7 @@ var (
 	Sinks   []sinks.Sink
 )
 
+// SetupSensors configures the standard set of Sensors used in the application
 func SetupSensors() error {
 	procSensor, err := proc.NewSensorFromPath(ProcFSPath)
 	if err != nil {
@@ -33,8 +34,9 @@ func SetupSensors() error {
 	return nil
 }
 
+// SetupSinks configures thge default set of Sinks used in the application
 func SetupSinks() {
 	Sinks = []sinks.Sink{
-		file.NewSink(OutputFile),
+		file.NewSinkFromPath(OutputFile),
 	}
 }

@@ -15,14 +15,18 @@ const (
 	path  = "/metrics"
 )
 
+// Sensor implements sensors.Sensor and samples from the `/metrics` endpoint of the algod service
 type Sensor struct {
 	addr string
 }
 
+// NewSensorFromAddress creates a new Sensor from the algod URL
+// Example: `http://localhost:8080`
 func NewSensorFromAddress(addr string) *Sensor {
 	return &Sensor{addr: addr}
 }
 
+// DoScan performs the scan and returns a sensors.SnapshotEvent or an error
 func (s *Sensor) DoScan(_ context.Context) (*sensors.SnapshotEvent, error) {
 	res, err := http.Get(s.addr + path)
 	if err != nil {

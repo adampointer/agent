@@ -23,6 +23,7 @@ var (
 	AlgodPidOverride int
 )
 
+// SetupEnvironment sets all the required variables from the environment or default values
 func SetupEnvironment() {
 	ScanInterval = durationFromEnvOrDefault("SCAN_INTERVAL", defaultScanInterval)
 	OutputFile = stringFromEnvOrDefault("OUTPUT_FILE", defaultOutputFile)

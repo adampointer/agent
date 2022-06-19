@@ -9,14 +9,19 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Sink implements sinks.Sink and persists events into a log file
 type Sink struct {
 	path string
 }
 
-func NewSink(path string) *Sink {
+// NewSinkFromPath creates a new Sink from the path to the output file
+func NewSinkFromPath(path string) *Sink {
 	return &Sink{path: path}
 }
 
+// Listen for events on dataC
+// This method will block until either the context is canceled or an error is returned while
+// attempting to write to file. If an error is returned it will be sent on the provided errC channel
 func (s *Sink) Listen(ctx context.Context, dataC chan eventbus.Event, errC chan error) {
 	f, err := outputFile(s.path)
 	if err != nil {
